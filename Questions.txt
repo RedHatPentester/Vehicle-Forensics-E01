@@ -1,0 +1,31 @@
+ Case VF-GH-2024-CR-0089
+HIVE CONSULT Vehicle Forensics Training Suite | Developed by Nana Sei Anyemedu
+
+
+
+Q1.Open System/vehicle_config.xml` from the E01 image. State the full make, model, year and colour of the vehicle. What is the licence plate number, the VIN, and the name of the IVI system installed? What tool did you use to open this file?
+
+
+
+Q2. Load the E01 in your forensic tool and navigate to `Media/Dashcam/`. How many dashcam frames are stored in total? Open the frame named `DCAM_20240418_224700.jpg` — what event label appears on the HUD, what speed is displayed, and what visual differences do you notice between this frame and all the other dashcam frames in the folder?
+
+
+Q3.Open `Phone/phone_sync.db` and query the `paired_devices` table. How many Bluetooth devices have ever been paired with this vehicle? List each device by name and class. Which device is flagged as **not trusted**, how many times did it connect, and what is unusual about the timing of its only connection?
+
+
+Q4.Navigate to `Media/Receipts/`. Two receipts are stored from the night of the incident. Name the two locations, state the exact time printed on each receipt, and explain what these two documents together tell you about the driver's movements and activities in the hours before the collision.
+
+Q5. Open `System/system_log.db` and look at the `dtc_log` table. How many fault codes were recorded? For each code state the code number, the plain-English description, the exact time it was set, and the exact time it was cleared. What single fact about how they were cleared is most significant to this investigation?
+
+
+Q6.Open `Navigation/navigation.db` and query the `gps_track` table filtering for session `SES-0418-D`. What was the vehicle's speed at timestamp `2024-04-18T22:47:00Z`? What are the latitude and longitude coordinates at that exact moment? Now open Google Maps or any mapping tool and plot those coordinates — what road and location do they correspond to?
+
+
+Q7. Open `Media/Receipts/RCPT_FUEL_20240418_221558.jpg`. What fuel station is shown on the receipt, what time was the transaction, how many litres were purchased and what was the total amount paid? Now cross-reference this with the `navigation.db → destinations` table — how many times had this vehicle visited this same location before this date?
+
+
+Q8. Open `EDR/edr_events.db` and look at the `edr_events` table. How many events are recorded? Find the event with ID `EDR-GH-0418-2247`. Without going into the speed trace, read the `notes` field for this event and write out in your own words what it describes. What are the three most important facts stated in that notes field?
+
+
+© Nana Sei Anyemedu | HIVE CONSULT — Vehicle Forensics Training Suite v2.0
+All persons, vehicles, phone numbers and events in this image are entirely fictional and created for training purposes only.
